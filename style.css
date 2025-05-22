@@ -1,0 +1,243 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #E2C9A7, #D4B189);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #4B2F2A;
+}
+
+/* Main container to hold both quote box and favorites section */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Quote Box */
+.quotebox {
+    background: rgba(255, 255, 255, 0.85);
+    width: 48%;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    position: relative;
+    transition: transform 0.3s ease;
+    background-image: url('https://via.placeholder.com/650x350');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.quotebox:hover {
+    transform: scale(1.05);
+}
+
+.quotebox h2 {
+    font-size: 36px;
+    color: #4B2F2A;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.quotebox blockquote {
+    font-size: 28px;
+    font-style: italic;
+    color: #5D3F30;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    position: relative;
+    padding: 0 40px;
+}
+
+.quotebox span {
+    display: block;
+    margin-top: 10px;
+    color: #4B2F2A;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* NEW QUOTE Button Styling */
+.quotebox button.new-quote {
+    background: #D4936E;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quotebox button.new-quote:hover {
+    background: #D4936E;
+    transform: scale(1.1);
+}
+
+.quotebox button.new-quote:active {
+    transform: scale(0.98);
+}
+
+/* SAVE TO FAVORITES Button Styling */
+.quotebox button.save-favorites {
+    background: #D4936E;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quotebox button.save-favorites:hover {
+    background: #D4936E;
+    transform: scale(1.1);
+}
+
+.quotebox button.save-favorites:active {
+    transform: scale(0.98);
+}
+
+/* Category Select Button Styling */
+.category-select {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 2px solid #D4936E;
+    background: #D4936E;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.category-select:hover {
+    background: #D4936E;
+    transform: scale(1.05);
+    border-color: #C9A38B;
+}
+
+.category-select:focus {
+    outline: none;
+    border-color: #B67C51;
+}
+
+/* Material Icons for the buttons */
+.quotebox button .material-icons {
+    font-size: 22px;
+}
+
+/* Favorites Section */
+.favorites {
+    background: #fff5e1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+    margin-left: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.favorites h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4B2F2A;
+}
+
+.favorites ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.favorites ul li {
+    background: #D4936E;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.favorites ul li:hover {
+    transform: scale(1.05);
+}
+
+.favorites ul li.removing {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.favorites ul li .close-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #4B2F2A;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .quotebox {
+        padding: 30px;
+        width: 100%;
+    }
+
+    .favorites {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quotebox {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .favorites {
+        width: 100%;
+    }
+}

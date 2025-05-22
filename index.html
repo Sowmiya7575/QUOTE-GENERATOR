@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="quotebox">
+            <h2>QUOTE OF THE DAY</h2>
+            <blockquote id="quote">LOADING...</blockquote>
+            <span id="author">LOADING...</span>
+            <div class="buttons-container">
+                <button class="new-quote" onclick="getRandomQuote()">
+                    <span class="material-icons">refresh</span> NEW QUOTE
+                </button>
+                <select class="category-select" id="categorySelect" onchange="getRandomQuote()">
+                    <option value="motivational">Motivational</option>
+                    <option value="love">Love</option>
+                    <option value="funny">Funny</option>
+                    <option value="life">Life</option>
+                </select>
+                <button class="save-favorites" onclick="saveToFavorites()">
+                    <span class="material-icons">favorite</span> SAVE TO FAVORITES
+                </button>
+            </div>
+        </div>
+
+        <div class="favorites">
+            <h3>My Favorite Quotes</h3>
+            <ul id="favoritesList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
